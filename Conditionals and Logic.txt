@@ -188,6 +188,77 @@ int main() {
 
 ==================================================================================================================================================================
 
+* Else If
+---------
+	So what happens if you want more than two possible outcomes?
+
+	This is where else if comes in!
+
+		if (condition) {
+
+  			some code
+
+		} else if (condition) {
+
+  			some code
+
+		} else {
+
+  			some code
+
+		}
+
+	The else if statement always comes after the if statement and before the else statement. The else if statement also takes a condition.
+
+	And you can have more than one of them! Here’s an example with three of them:
+
+		if (grade == 9) {
+ 
+  			std::cout << "Freshman\n";
+ 
+		} 
+		else if (grade == 10) {
+ 
+  			std::cout << "Sophomore\n";
+ 
+		}
+		else if (grade == 11) {
+ 
+  			std::cout << "Junior\n";
+ 
+		} 
+		else if (grade == 12) {
+ 
+  			std::cout << "Senior\n";
+ 
+		}
+		else {
+ 
+  			std::cout << "Super Senior\n";
+ 
+		}
+
+ph.cpp
+------
+#include <iostream>
+
+int main() {
+  
+  double ph = 4.6;
+  
+  // Write the if, else if, else here:
+  if (ph > 7)  {
+    std::cout << "Basic\n";
+  }
+  else if (ph < 7) {
+    std::cout << "Acidic\n";
+  }
+  else {
+    std::cout << "Neutral]n";
+  } 
+}
+
+==================================================================================================================================================================
 
 
 
