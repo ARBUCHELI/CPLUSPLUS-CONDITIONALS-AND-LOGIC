@@ -1,0 +1,203 @@
+# PROJECT
+---------
+
+* Rock, Paper, Scissors, Lizard, Spock
+--------------------------------------
+	You may have played Rock, Paper, Scissors, but have you played Rock, Paper, Scissors, Lizard, Spock? This is the infamous game brought to popularity with the TV show The Big Bang 
+	Theory.
+
+	Write a rock_paper_scissors.cpp program that:
+
+		. Prompts the user to select either Rock, Paper, Scissors, Lizard, or Spock.
+
+		. Instructs the computer to randomly select either Rock, Paper, Scissors, Lizard, or Spock.
+
+		. Compares the user’s choice and the computer’s choice and determine the winner.
+
+		. Informs the user who the winner is.
+
+	Note: This project will be particularly challenging due to its complex logic. Beware! Only the brave should venture forth.
+
+	Tasks
+	9/9 Complete
+	Mark the tasks as complete by checking them off
+
+	Understanding the game:
+	-----------------------
+
+	1.
+	Note from the creator, Sam Kass:
+
+	“I invented this game (with Karen Bryla) because it seems like when you know someone well enough, 75-80% of any Rock Paper Scissors games you play with that person end up in a 
+	tie. Well, here is a slight variation that reduces that probability. This version is also nice because it satisfies the Law of Fives.”
+
+	Before we get started, watch this video to get acquainted with the game:
+
+	Didn’t quite catch the logic? Check the hint to see the list.
+
+
+	Hint
+	The logic:
+
+		. Scissors cuts Paper.
+		. Paper covers Rock.
+		. Rock crushes Lizard.
+		. Lizard poisons Spock.
+		. Spock smashes Scissors.
+		. Scissors decapitate Lizard.
+		. Lizard eats Paper.
+		. Paper disproves Spock.
+		. Spock vaporizes Rock.
+		. (and as it always has) Rock crushes Scissors.
+
+	We will first tackle Rock, Paper, Scissors first, before making it into Rock, Paper, Scissors, Lizard, Spock!
+
+	Setting up:
+	2.
+	Begin by writing a multi-line comment that describes what this program will do.
+
+
+	Hint
+	Multi-line comment starts with /* and ends with */:
+
+		/*
+		Rock Paper Scissors Lizard Spock
+		(The Big Bang Theory)
+		*/
+
+	3.
+	Let’s create a skeleton for the program. Add:
+
+		#include <iostream>
+ 
+		int main() {
+ 
+  			// Live long and prosper
+ 
+		}
+
+	Hint
+	In order to read or write to the standard input/output streams, you need to include:
+
+		#include <iostream>
+		The main() function houses your program.
+
+	4.
+	In this program, we need a random number for the computer’s choice and we also need to declare an int variable called user for the user’s choice.
+
+	So add this line of code at the top:
+
+		#include <stdlib.h>
+
+	And the code below in main():
+
+		srand (time(NULL));
+ 
+		int computer = rand() % 3 + 1;
+ 
+		int user = 0;
+
+	Now we have a random number that could be 1, 2, or 3 for the computer. And we also have a variable for user’s input.
+
+
+	Hint
+	C++ has a rand() function from stdlib.h that generates a random number.
+
+	So if you add #include <stdlib.h> at the top of your program, you can use the rand() function like so:
+
+		std::cout << rand() << "\n";
+		std::cout << rand() << "\n";
+		std::cout << rand() << "\n";
+
+	It would output three random numbers like:
+
+		1804289383
+		846930886
+		1681692777
+
+	For this part of the project, we don’t want just completely random numbers. We want either 1, 2, or 3.
+
+	This is where the modulus operator % comes in! The modulus operator computes the remainder of a division.
+
+	By doing rand() % 3, we are dividing the random number by 3 and finding its remainder (and the remainder can only be 0, 1, or 2).
+
+		std::cout << rand() % 3 << "\n";
+		std::cout << rand() % 3 << "\n";
+		std::cout << rand() % 3 << "\n";
+
+	This will turn each random number into either 0, 1, or 2:
+
+		2
+		0
+		1
+
+	We want 1, 2, or 3 instead, so we can just add 1 to it:
+
+		std::cout << rand() % 3 + 1 << "\n";
+		std::cout << rand() % 3 + 1 << "\n";
+		std::cout << rand() % 3 + 1 << "\n";
+
+	5.
+	Before moving on, let’s compile and execute using the terminal to make sure there are no bugs.
+
+
+	Hint
+	g++ rock_paper_scissors.cpp
+	./a.out
+
+	Prompt the user to select either Rock, Paper, or Scissors:
+	----------------------------------------------------------
+	6.
+	We can do something like:
+
+		std::cout << "====================\n";
+		std::cout << "rock paper scissors!\n";
+		std::cout << "====================\n";
+ 
+		std::cout << "1) ✊\n";
+		std::cout << "2) ✋\n";
+		std::cout << "3) ✌️\n";
+ 
+		std::cout << "shoot! ";
+
+	Hint
+	This tells the user to pick 1, 2, or 3.
+
+	7.
+	Grab user’s input using std::cin and store it into user.
+
+
+	Hint
+	Make sure two operators are going right:
+
+		std::cin >> user;
+
+	Use the power of conditionals & logic:
+	--------------------------------------
+	8.
+	Now we have both the user’s choice and the computer’s randomized choice, let’s use conditionals & logic to determine the winner.
+
+	Make sure to jot down the logic of Rock Paper Scissors on a piece of paper before you start coding.
+
+	Take your time!
+
+
+	Hint
+	Don’t be afraid to Google and check out the forums for help.
+
+	Optional: Rock, Paper, Scissors, Lizard, Spock!
+	-----------------------------------------------
+	9.
+	Now, this is your time to shine! Watch the video above and rework your program to make it The Big Bang Theory version.
+
+	Make sure to jot down the logic on a piece of paper before starting.
+
+	Sample solutions:
+	-----------------
+	RPS.cpp
+	RPSLS.cpp
+	P.S. If you make something cool, share it with us!
+
+
+	Hint
+	Tedious? Well, we’ll learn something called loops in the next module that will make our lives easier!
