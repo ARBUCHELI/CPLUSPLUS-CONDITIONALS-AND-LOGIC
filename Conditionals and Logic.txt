@@ -59,6 +59,48 @@ int main() {
 
 ==================================================================================================================================================================
 
+* If Statement
+--------------
+	An if statement is used to test an expression for truth and execute some code based on it. Here’s a simple form of the if statement:
+
+		if (condition) {
+
+  			some code
+
+		}
+
+	If the condition is true, then the statements within are executed. Otherwise, the statements are skipped and the program continues on.
+
+		if (flip == 1) {
+ 
+  			std::cout << "Heads\n";
+ 
+		}
+
+	The if keyword is followed by a set of parentheses (). Inside the parentheses (), a condition is provided that evaluates to true or false:
+
+		. If the condition evaluates to true, the code inside the curly braces {} executes.
+
+		. If the condition evaluates to false, the code won’t execute.
+
+	So in the code above, if flip is equal to 1, the program outputs “Heads”; if it does not, then nothing happens and the program continues.
+
+grade.cpp
+---------
+#include <iostream>
+
+int main() {
+
+  int grade = 90;
+  
+  if (grade > 60) {
+    std::cout << "Pass";
+  }
+  
+}
+
+==================================================================================================================================================================
+
 
 
 
