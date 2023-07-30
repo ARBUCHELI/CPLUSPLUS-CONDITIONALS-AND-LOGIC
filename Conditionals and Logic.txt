@@ -134,6 +134,60 @@ int main() {
 
 ==================================================================================================================================================================
 
+* Else Clause
+-------------
+	We can also add an else clause to an if statement to provide code that will only be executed if the condition is false. Here’s a form of an if statement that includes an else 
+	clause:
+
+		if (condition) {
+
+  			do something
+
+		} else {
+
+  			do something else
+
+		}
+
+		. If condition is true, statement1 is executed. Then the program skips statement2 and executes any code statements following the if/else clause.
+
+		. If condition is false, statement1 is skipped and statement2 is executed. After statement2 completes, the program executes any code statements following the if/else 
+		clause.
+
+		if (coin == 1) {
+ 
+  			std::cout << "Heads\n";
+ 
+		}
+		else {
+ 
+  			std::cout << "Tails\n";
+ 
+		}
+
+	So in the code above, if coin is equal to 1, the program outputs “Heads”; if it does not, then it outputs “Tails”.
+
+	Note: It’s either or — only one of them will execute!
+
+grade.cpp
+---------
+#include <iostream>
+
+int main() {
+
+  int grade = 59;
+
+  if (grade > 60) {
+
+    std::cout << "Pass\n";
+
+  }
+  else {
+    std::cout << "Fail\n";
+  }
+
+==================================================================================================================================================================
+
 
 
 
