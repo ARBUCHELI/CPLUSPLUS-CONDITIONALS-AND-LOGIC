@@ -70,7 +70,7 @@ int main() {
 
 ==================================================================================================================================================================
 
-* Logical Operator: II
+* Logical Operator: ||
 ----------------------
 	The or logical operator is denoted by ||.
 
@@ -108,7 +108,86 @@ int main() {
 
 ==================================================================================================================================================================
 
+* Logical Operator: !
+---------------------
+	The not logical operator is denoted by !.
 
+	It reverses the bool outcome of the expression that immediately follows.
+
+	Here’s the truth table:
+
+		a	!a
+		-	--
+		false	true
+		true	false
+
+	For instance:
+
+		. ( !true ) returns false
+
+		. ( !false ) returns true
+
+		. ( !(10 < 11) ) returns false
+
+	Note: The keyword not can be used in the place of !.
+
+not.cpp
+-------
+#include <iostream>
+
+int main() {
+  
+  bool logged_in = false;
+  
+  // Write the code below:
+  if (!logged_in) {
+    std::cout << "Try again";
+  }
+  
+}
+
+==================================================================================================================================================================
+
+* Review
+--------
+	Awesome! In this mini-lesson, we’ve added more operators to our toolbox:
+
+		. &&: the and logical operator
+
+		. ||: the or logical operator
+
+		. !: the not logical operator
+
+leap_year.cpp
+-------------
+#include <iostream>
+ 
+int main() {
+ 
+  int y = 0;
+ 
+  std::cout << "Enter year: ";
+  std::cin >> y;
+ 
+  if (y < 1000 || y > 9999) {
+ 
+    std::cout << "Invalid entry.\n";
+ 
+  }
+  else if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0) {
+ 
+    std::cout << y;
+    std::cout << " falls on a leap year.\n";
+ 
+  }
+  else {
+ 
+    std::cout << y;
+    std::cout << " is not a leap year.\n";
+ 
+  }
+ 
+}
 
 
 
