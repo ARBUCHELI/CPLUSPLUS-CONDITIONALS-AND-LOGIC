@@ -1,0 +1,249 @@
+# PROJECT
+---------
+
+* Magic 8-Ball
+--------------
+	The Magic 8-Ball is a super popular toy used for fortune-telling or seeking advice, developed in the 1950s!
+
+	Write a magic8.cpp program that will output a random fortune each time it executes.
+
+	The answers inside a standard Magic 8-Ball are:
+
+		. It is certain.
+
+		. It is decidedly so.
+
+		. Without a doubt.
+
+		. Yes - definitely.
+
+		. You may rely on it.
+
+		. As I see it, yes.
+
+		. Most likely.
+
+		. Outlook good.
+
+		. Yes.
+
+		. Signs point to yes.
+
+		. Reply hazy, try again.
+
+		. Ask again later.
+
+		. Better not tell you now.
+
+		. Cannot predict now.
+
+		. Concentrate and ask again.
+
+		. Don't count on it.
+
+		. My reply is no.
+
+		. My sources say no.
+
+		. Outlook not so good.
+
+		. Very doubtful.
+
+	For example:
+
+		MAGIC 8-BALL:
+ 
+		It is decidedly so.
+
+	Or:
+
+		MAGIC 8-BALL:
+ 
+		Very doubtful.
+
+	If you get stuck during this project or would like to see an experienced developer work through it, click Get Unstuck to see a project walkthrough.
+
+	Tasks
+	9/9 Complete
+
+	Mark the tasks as complete by checking them off
+	
+	What we are building in this project:
+	-------------------------------------
+	1.
+	Let’s create a skeleton for the program. Add:
+
+		#include <iostream>
+ 
+		int main() {
+ 
+  			// Your future is here
+ 
+		}
+
+	Hint
+	In order to read or write to the standard input/output streams, you need to include:
+
+		#include <iostream>
+
+	The main() is the main function that houses your program.
+
+	2.
+	The first line should be the same across all executions, so let’s output the phrase MAGIC 8-BALL:.
+
+
+	Hint
+	This should go inside your main() function:
+
+		std::cout << "MAGIC 8-BALL:\n\n";
+
+	Added an extra \n here to output an extra new line after this.
+
+	Generate a random number!
+	-------------------------
+	3.
+	Similar to the Coin Flip program, we need to generate a random number.
+
+	C++ has a std::rand() function from cstdlib that generates a random number.
+
+	For example, if you add #include <cstdlib>, you can use the std::rand() function:
+
+		std::cout << std::rand() << "\n";
+		std::cout << std::rand() << "\n";
+		std::cout << std::rand() << "\n";
+
+	It would output something like:
+
+		1804289383
+		846930886
+		1681692777
+
+	So, create an int variable and set it equal to a random number:
+
+		int answer = std::rand();
+
+	And output it in the terminal.
+
+	Don’t forget to add #include <cstdlib> at the top.
+
+
+	Hint
+	Your code should look something like:
+
+		#include <iostream>
+		#include <cstdlib>
+ 
+		int main() {
+ 
+  			std::cout << "MAGIC 8-BALL:\n\n";
+ 
+  			int answer = std::rand();
+ 
+  			std::cout << answer;
+ 
+		}
+
+	4.
+	There are 20 different text outputs in the official Magic 8-Ball, but let’s write your own. And let’s do 10 of them.
+
+	So we don’t just want any random number. We want a random number from 0-9.
+
+	Change your answer to:
+
+		int answer = std::rand() % 10;
+
+	The % is the modulo symbol that returns the remainder.
+
+
+	Hint
+	Suppose std::rand() gives a number of 36.
+
+	36 % 20 is 16.
+
+	Your code should now look like:
+
+		#include <iostream>
+		#include <cstdlib>
+ 
+		int main() {
+ 
+  			std::cout << "MAGIC 8-BALL:\n\n";
+ 
+  			int answer = std::rand() % 10;
+ 
+  			std::cout << answer;
+ 
+		}
+
+	5.
+	If you click Save a bunch of times, you will realize that answer doesn’t change.
+
+	For our program to work, we need to get a different random number for each execution.
+
+	To do so, we need to add this line of code before the declaration of answer:
+
+		srand(time(NULL));
+
+	This sets the “seed” of the random number generator.
+
+
+	Hint
+	Your code should now look like:
+
+		#include <iostream>
+		#include <cstdlib>
+ 
+		int main() {
+ 
+  			std::cout << "MAGIC 8-BALL:\n\n";
+ 
+  			srand(time(NULL));
+ 
+  			int answer = std::rand() % 20;
+ 
+  			std::cout << answer;
+ 
+		}
+
+	Conditionals & logic:
+	---------------------
+	6.
+	Now is where the fun part comes in!
+
+	Write an if statement where if answer is equal to 0, your program outputs the phrase It is certain.
+
+
+	Hint
+		if (answer == 0) {
+ 
+  			std::cout << "It is certain.\n";
+ 
+		}
+
+	7.
+	And now add an else statement for the 10th answer: Very doubtful.
+
+
+	Hint
+		else {
+ 
+  			std::cout << "Very doubtful.\n";
+ 
+		}
+
+	8.
+	And now do the same for the 8 other answers using else ifs.
+
+
+	Hint
+	The logic should be 1 if, 8 else ifs, and 1 else.
+
+	Make sure to run your code as you add in more else if statements so you are debugging along the way.
+
+	Optional:
+	9.
+	Sample solutions:
+
+	magic8.cpp
+	magic8_switch
+	P.S. If you make something cool, share it with us!
