@@ -1,0 +1,375 @@
+# PROJECT
+---------
+
+* Harry Potter Sorting Hat Quiz
+-------------------------------
+	“A thousand years or more ago,
+	When I was newly sewn,
+	There lived four wizards of renown,
+	Whose names are still well known.”
+
+	The Hogwarts School of Witchcraft and Wizardry welcomes you! First-year students must go through the annual Sorting Ceremony.
+
+	The Sorting Hat is a talking hat at Hogwarts that magically determines which of the four school Houses each new student belongs most to:
+
+		. gryffindor
+		. hufflepuff
+		. ravenclaw
+		. slytherin
+
+	Write a sortinghat.cpp program that asks the user some questions and places them into one of the four Houses based on their answers!
+
+	Tasks
+	17/17 Complete
+	Mark the tasks as complete by checking them off
+
+	Setting up:
+	-----------
+	1.
+	First things first, let’s create a skeleton for the program:
+
+		#include <iostream>
+ 
+		int main() {
+ 
+  			// The magic starts here
+ 
+		}
+
+	Hint
+	In order to read or write to the standard input/output streams, you need to include:
+
+		#include <iostream>
+
+	The main() function houses your program.
+
+	2.
+	Every time the Muggle-born quiz taker answers a question, they should receive points to one or more Houses.
+
+	Let’s declare four int variables:
+
+		. gryffindor
+		. hufflepuff
+		. ravenclaw
+		. slytherin
+
+	And initialize them each to 0.
+
+
+	Hint
+	You can declare and initialize them on seperate lines:
+
+		int gryffindor = 0;
+		int hufflepuff = 0;
+		int ravenclaw = 0;
+		int slytherin = 0;
+
+	Or you declare them all on one line:
+
+		int gryffindor = 0, hufflepuff = 0, ravenclaw = 0, slytherin = 0;
+
+	3.
+	Let’s declare another four int variables to store each of their answers to the four quiz questions:
+
+		. answer1
+		. answer2
+		. answer3
+		. answer4
+
+	Hint
+	You can declare them all on one line:
+
+		int answer1, answer2, answer3, answer4;
+
+	Or declare and initialize them on seperate lines:
+
+		int answer1 = 0;
+		int answer2 = 0;
+		int answer3 = 0;
+		int answer4 = 0;
+
+	4.
+	Let’s add a std::cout statement that tells the Muggle that they have started the quiz with the phrase The Sorting Hat Quiz!.
+
+
+	Hint
+	Remember, the quiz taker needs to be reminded what program they are using!
+
+		std::cout << "=====================\n";
+		std::cout << "The Sorting Hat Quiz!\n";
+		std::cout << "=====================\n\n";
+
+	The double \n simply means two new lines.
+
+	5.
+	Before moving on, press Save and let’s compile and execute using the terminal to make sure there are no bugs.
+
+
+	Hint
+	To compile and execute:
+
+		g++ sortinghat.cpp
+		./a.out
+
+	Your output should look something like:
+
+		=====================
+		The Sorting Hat Quiz!
+		=====================
+
+	Question 1) When I'm Dead...
+	----------------------------
+	6.
+	And now comes the first question!
+
+	Use multiple std::cout statements to display the following question:
+
+		Q1) When I'm dead, I want people to remember me as:
+ 
+  			1) The Good
+  			2) The Great
+  			3) The Wise
+  			4) The Bold
+
+	Hint
+	This requires four or five cout statements.
+
+		std::cout << "Q1) When I'm dead, I want people to remember me as:\n\n";
+ 
+		std::cout << "  1) The Good\n";
+		std::cout << "  2) The Great\n";
+		std::cout << "  3) The Wise\n";
+		std::cout << "  4) The Bold\n\n";
+
+	7.
+	Then use std::cin to receive an input from the user.
+
+	Store that input in answer1.
+
+
+	Hint
+	Make sure the arrows are going towards the right!
+
+		std::cin >> answer1;
+
+	8.
+	Merlin’s beard! We have the user’s answer but now we need… conditionals & logic.
+
+	Write a control flow that:
+
+		. If answer1 == 1, add one point to hufflepuff.
+
+		. Else if answer1 == 2, add one point to slytherin.
+
+		. Else if answer1 == 3, add one point to ravenclaw.
+
+		. Else if answer1 == 4, add one point to gryffindor.
+
+		. Else, output Invalid input.
+
+
+	Hint
+	Your code should look something like:
+
+if (answer1 == 1) {
+ 
+  hufflepuff++;
+ 
+}
+else if (answer1 == 2) {
+ 
+ slytherin++;
+ 
+}
+else if (answer1 == 3) {
+ 
+  ravenclaw++;
+ 
+}
+else if (answer1 == 4) {
+ 
+  gryffindor++;
+ 
+}
+else {
+ 
+  std::cout << "Invalid input\n";
+ 
+}
+gryffindor++; is the same thing as gryffindor = gryffindor +1;.
+
+
+	9.
+	Compile and execute using the terminal.
+
+	Make sure to debug.
+
+
+Hint
+	g++ sortinghat.cpp
+	./a.out
+
+	Question 2) Dawn or Dusk?
+	-------------------------
+	10.
+	And now do the same thing for question 2:
+
+		Q2) Dawn or Dusk?
+ 
+  			1) Dawn
+  			2) Dusk
+
+	And use std::cin to get user’s input and store it in answer2.
+
+
+	Hint
+	This requires three or four cout statements.
+	
+	11.
+	However, for this question:
+
+		. If answer2 == 1, one point to both gryffindor and ravenclaw.
+
+		. Else if answer2 == 2, one point to both hufflepuff and slytherin.
+
+		. Else, output the phrase Invalid input.
+
+
+	Hint
+if (answer2 == 1) {
+ 
+  gryffindor++;
+  ravenclaw++;
+ 
+}
+else if (answer2 == 2) {
+ 
+  // one point to hufflepuff
+  // one point to slytherin
+ 
+}
+else {
+ 
+  // output "Invalid input"
+ 
+}
+
+	Question 3) Instrument
+	----------------------
+	12.
+	Do the same thing for question 3:
+
+		Q3) Which kind of instrument most pleases your ear?
+ 
+  		1) The violin
+  		2) The trumpet
+  		3) The piano
+  		4) The drum
+
+	Hint
+	This requires four or five cout statements.
+
+	13.
+	For this question:
+
+		. If answer3 == 1, add one to slytherin.
+
+		. Else if answer3 == 2, add one to hufflepuff.
+
+		. Else if answer3 == 3, add one to ravenclaw.
+
+		. Else if answer3 == 4, add one to gryffindor.
+
+		. Else, output Invalid input.
+
+
+	Hint
+	This should be very similar to the previous if / else if / else statements.
+
+	Question 4) Which road tempts you most?
+	---------------------------------------
+	14.
+	Do the same thing for question 4:
+
+	Q4) Which road tempts you most?
+ 
+  		1) The wide, sunny grassy lane
+  		2) The narrow, dark, lantern-lit alley
+  		3) The twisting, leaf-strewn path through woods
+  		4) The cobbled street lined (ancient buildings)
+
+	Hint
+	This requires four or five cout statements.
+
+	15.
+	For this question:
+
+		. If answer4 == 1, add one to hufflepuff.
+
+		. Else if answer4 == 2, add one to slytherin.
+
+		. Else if answer4 == 3, add one to gryffindor.
+
+		. Else if answer4 == 4, add one to ravenclaw.
+
+		. Else, output Invalid input.
+
+
+	Hint
+	This should be very similar to the previous if / else if / else statements.
+
+	The answer:
+	-----------
+	16.
+	Now we need to find out which of the four Houses has the highest answer!
+
+	We will need another variable called max that starts at 0 and an empty string with:
+
+		std::string house;
+		And to find the maximum:
+
+if (gryffindor > max) {
+ 
+  max = gryffindor;
+  house = "Gryffindor";
+ 
+}
+ 
+if (hufflepuff > max) {
+ 
+  max = hufflepuff;
+  house = "Hufflepuff";
+ 
+}
+ 
+if (ravenclaw > max) {
+ 
+  max = ravenclaw;
+  house = "Ravenclaw";
+ 
+}
+ 
+if (slytherin > max) {
+ 
+  max = slytherin;
+  house = "Slytherin";
+ 
+}
+ 
+std::cout << house << "!\n";
+This also outputs the House.
+
+
+	Hint
+	Compile and execute your program!
+
+	Optional:
+	17.
+	Sample solution(s):
+
+	sortinghat.cpp
+	P.S. If you make something cool, share it with us!
+
+
+	Hint
+	Tag @Codecademy on Twitter or make a Pull Request to the Learn C++ GitHub repo for a chance to be featured in the course.
